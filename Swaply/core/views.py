@@ -1,3 +1,4 @@
+from core.forms import SignUpForm
 from django.shortcuts import render
 from Items.models import Category, Item
 
@@ -10,3 +11,9 @@ def index(request):
 
 def contact(request):
     return render ( request , "core/contact.html" )
+
+def signup(request):
+    form = SignUpForm()
+
+    context = {'form':form}
+    return render(request, 'core/signup.html', context)
